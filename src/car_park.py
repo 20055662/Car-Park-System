@@ -1,6 +1,7 @@
 from sensor import Sensor
 from display import Display
 
+
 class CarPark:
     def __init__(self, location, capacity, plates=None, sensors=None, displays=None):
         self.location = location
@@ -22,3 +23,16 @@ class CarPark:
             self.sensors.append(component)
         elif isinstance(component, Display):
             self.displays.append(component)
+
+    def add_car(self, plate):
+        self.plates.append(plate)
+        self.update_displays()
+
+    def remove_car(self, plate):
+        self.plates.remove(plate)
+        self.update_displays()
+
+    @property  # return any method into property
+    def available_bays(self):
+        # car_park.available_bays
+        return self.capacity - len(self.plates)

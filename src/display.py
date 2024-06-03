@@ -4,3 +4,8 @@ class Display:
         self.message = message
         self.is_on = is_on
         self.car_park = car_park
+
+    def update(self, data):
+        for key, value in data.items():
+            print(f"{key}: {value}")
+            
