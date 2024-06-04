@@ -1,4 +1,4 @@
-from car_park import CarPark
+#from car_park import CarPark
 from abc import ABC, abstractmethod
 import random
 
@@ -37,4 +37,3 @@ class ExitSensor(Sensor):
 
     def _scan_plate(self):
         return random.choice(self.car_park.plates)
-    

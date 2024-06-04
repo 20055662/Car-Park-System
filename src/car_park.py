@@ -26,13 +26,13 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
-        self.update_displays()
+#        self.update_displays()
 
     def remove_car(self, plate):
         self.plates.remove(plate)
-        self.update_displays()
+#        self.update_displays()
 
     @property  # return any method into property
     def available_bays(self):
         # car_park.available_bays
-        return self.capacity - len(self.plates)
+        return max(0, self.capacity - len(self.plates))
