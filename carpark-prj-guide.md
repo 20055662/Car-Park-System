@@ -64,19 +64,19 @@ This guide provides detailed step-by-step instructions for completing the projec
 **Evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
 
-```markdown
-![Initial commit](images/mu_image.png)
-```
+### GitHub Repositories
+![Initial commit](images/01-Github_view.png)
+
 
 ### Identify classes, methods, and attributes
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| Class Name | Attributes                               | Methods                   |
+| ---------- |------------------------------------------|---------------------------|
+| `CarPark`    | location,capacity,plates,sensors,display | add_car,remove_car        |
+| `Sensor`     | name_id, entry_sensor, exit_sensor       | scan_plate,detect_vehicle |
+| `Display`    | name_id, message                         | screen_on, update_data    |
 
 **Evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -104,9 +104,9 @@ Ensure you have completed the previous table and include at least two methods an
 **Evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
 
-```markdown
-![Added stubs for classes](images/stubs-for-classes.png)
-```
+### GitHub src/ directory
+![Added stubs for classes](images/01-github_src_directory.png)
+
 
 ### Add constructors and attributes to the classes
 
@@ -205,6 +205,8 @@ You realize that you need a way to configure the car park system. You decide to 
 --------
 **Evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
+### git tags
+![git tags s1&s2](images/git_tag_s1_s2.png)
 
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
@@ -370,10 +372,14 @@ Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which clas
 
 >Q. Which class is responsible for the number of available bays (and why)?
 >
+car_park class is responsible for the number of available bays, because,available bays are a type of status of car park.
 >Q. Which class is responsible for the current temperature (and why)?
 >
+display class is responsible for the temperature, because that's one of the information will be present in the display.
 >Q. Which class is responsible for the time (and why)?
 >
+display class is responsible for the time, because that's one of the information wil be present in the display.
+
 --------
 
 ##### Detour: implement available bays
@@ -444,26 +450,26 @@ This time, we will push the tag to the remote repository:
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
 
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+### added methods to the car park class
+![Added methods to the car park class](images/04-car_park_class_new_method.png)
+
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_  
->      `Answer here...`
+>      `car_park class is responsible for the number of available bays, because,available bays are a type of status of car park.`
 >    - _The current temperature_  
->      `Answer here...`
+>      `display class is responsible for the temperature, because that's one of the information will be present in the display.`
 >    - _The time_  
->      `Answer here...`
+>      `display class is responsible for the time, because that's one of the information wil be present in the display.`
 >
 > 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    `Attribute are refering to additional information of an object. Propertiees are describing the characteristics of an object.`
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
+>    `ADV:dictionary is dynamic,it can grow and shrink as needed. DISADV: we can only access the items of a dictionary by referring to its key name.`
 
 #### Add a detect vehicle method to the Sensor class
 
