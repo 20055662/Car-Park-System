@@ -6,7 +6,8 @@ from car_park import CarPark
 class TestDisplay(unittest.TestCase):
     def setUp(self):
         self.car_park = CarPark("123 Example Street", 100)
-        self.display = Display(id=1, message="Welcome to the car park", is_on=True, car_park=CarPark)
+        self.display = Display(id=1, message="Welcome to the car park", is_on=True,
+                               car_park=CarPark("123 Example Street", 100))
 
     def test_display_initialized_with_all_attributes(self):
         self.assertIsInstance(self.display, Display)

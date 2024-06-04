@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 import random
 
 
-class Sensor(ABC):
+class Sensor:
     def __init__(self, id, car_park, is_active=False):
         self.id = id
         self.car_park = car_park
