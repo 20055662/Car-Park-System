@@ -68,4 +68,5 @@ class CarPark:
             config = json.load(f)
         return cls(config["location"], config["capacity"], log_file=config["log_file"])
 
-    
+    def save_config(self):
+        return CarPark.from_config(config_file=Path("config.json")).write_config()
