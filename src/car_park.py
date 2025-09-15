@@ -9,7 +9,7 @@ class CarPark:
     def __init__(self, location, capacity, plates=None, sensors=None, displays=None, log_file=Path("log.txt")):
         self.location = location
         self.capacity = capacity
-        self.plates = plates or []
+        self.plates = set(plates or []) #change list to set prevent duplicate plates
         self.sensors = sensors or []
         self.displays = displays or []
         self.log_file = log_file if isinstance(log_file, Path) else Path(log_file)
@@ -31,14 +31,20 @@ class CarPark:
             self.displays.append(component)
 
     def add_car(self, plate):
-        self.plates.append(plate)
-        self.update_displays()
-        self._log_car_activity(plate, "entered")
+        if len(self.plates) < self.capacity:
+            self.plates.add(plate)
+            self.update_displays()
+            self._log_car_activity(plate, "entered")
+        else:
+            print("Car park full! Cannot add car.")
 
     def remove_car(self, plate):
-        self.plates.remove(plate)
-        self.update_displays()
-        self._log_car_activity(plate, "exited")
+        if plate in self.plates:
+            self.plates.remove(plate)
+            self.update_displays()
+            self._log_car_activity(plate, "exited")
+        else:
+            print(f"Plate {plate} not found in car park.")
 
     def update_displays(self):
         data = {"available_bays": self.available_bays, "Temperature": 25}
