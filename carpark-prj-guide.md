@@ -1100,11 +1100,11 @@ In your final submission, you must include any files you created or modified. Th
 
 4. Release your code on GitHub. You can do this by going to the releases section and selecting "Create a new release". Give the release a title ("Project Submission") and description. Then click "Publish release". Include a screenshot of the release:
 
-   ```markdown
-   ![Create a release](images/create-release.png)
+### release
+   ![Create a release](images/create_a_release.png)
 
-   ![Publish a release](images/publish-release.png)
-   ```
+   ![Publish a release](images/publish_a_release.png)
+
 
 5. Congratulations! You have completed the project. You can now submit the assignment via Blackboard. Take the time to reflect on your work and write any notes and observations down.
 
