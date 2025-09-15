@@ -35,4 +35,8 @@ class ExitSensor(Sensor):
         print(f"Outgoing 🚗 vehicle detected. Plate: {plate}")
 
     def _scan_plate(self):
-        return random.choice(self.car_park.plates)
+        #check if there are cars before choosing a plate
+        if self.car_park.plate:
+            return random.choice(list(self.car_park.plates))
+        else:
+            return None # skip update_car_park if plate is none
